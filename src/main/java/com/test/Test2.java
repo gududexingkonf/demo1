@@ -57,5 +57,6 @@ public class Test2 {
         //根据条件查询需要的值
         System.out.println(studentRepository.findNameById("1"));
         System.out.println("hello word");
+        System.out.println("hot-fix");
     }
 }
