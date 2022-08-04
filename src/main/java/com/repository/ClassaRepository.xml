@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.repository.ClassaRepository">
+    <resultMap id="classMapper" type="com.ping.ecut.classa">
+        <!--        映射与student类与数据库字段，主键用id标签，其他字段result-->
+        <!--        cplumn数据库字段id，property是student属性id相互映射-->
+        <id column="id" property="id"></id>
+        <result column="number" property="number"></result>
+        <!--        联合查询property映射的类(classa)集合的成员变量 ofType是集合的泛型 查询一对多 -->
+        <collection property="students" ofType="com.ping.ecut.student">
+            <id column="id" property="id"></id>
+            <result column="name" property="name"></result>
+            <result column="age" property="age"></result>
+        </collection>
+    </resultMap>
+    <select id="findById" resultMap="classMapper" parameterType="int">
+        select s.id,s.name,s.age,s.cia,c.id,c.number from student s,classa c where c.id=#{id} and s.cia=c.id
+    </select>
+</mapper>
