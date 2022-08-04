@@ -59,5 +59,6 @@ public class Test2 {
         System.out.println("hello word");
         System.out.println("hot-fix");
         System.out.println("master test");
+        System.out.println("master test 2");
     }
 }
