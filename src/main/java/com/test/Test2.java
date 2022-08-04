@@ -58,5 +58,6 @@ public class Test2 {
         System.out.println(studentRepository.findNameById("1"));
         System.out.println("hello word");
         System.out.println("hot-fix");
+        System.out.println("hot-fix test");
     }
 }
